@@ -73,7 +73,7 @@ class _HomeViewState extends State<HomeView> {
           ),
           SizedBox(
             width: 450.w,
-            height: 240.h,
+            height: 200.h,
             child: PageView(
               controller: controller,
               children: [
@@ -83,25 +83,26 @@ class _HomeViewState extends State<HomeView> {
               ],
             ),
           ),
-          Container(
-            color: Colors.white,
-            padding: EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Doctors',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xff1A1A2E),
-                  ),
-                ),
-                SizedBox(height: 12),
-                // _buildDoctorCard(),
-              ],
-            ),
-          ),
+          Text('doctor'),
+          // Container(
+          //   color: Colors.white,
+          //   padding: EdgeInsets.all(16),
+          //   child: Column(
+          //     crossAxisAlignment: CrossAxisAlignment.start,
+          //     children: [
+          //       Text(
+          //         'Doctors',
+          //         style: TextStyle(
+          //           fontSize: 16,
+          //           fontWeight: FontWeight.bold,
+          //           color: Color(0xff1A1A2E),
+          //         ),
+          //       ),
+          //       SizedBox(height: 12),
+          //       // _buildDoctorCard(),
+          //     ],
+          //   ),
+          // ),
         ],
       ),
     );

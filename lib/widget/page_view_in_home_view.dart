@@ -56,8 +56,9 @@ class PageViewInHomeView extends StatelessWidget {
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(left: 140, top: 155),
+        Positioned(
+          right: 145,
+          bottom: 15,
           child: SmoothPageIndicator(
             controller: controller,
             count: 3,
