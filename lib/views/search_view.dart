@@ -1,7 +1,8 @@
 import 'package:final_project/bloc/local_search_doctor_bloc/local_search_doctor_bloc.dart';
+import 'package:final_project/views/doctor_details_view.dart';
 import 'package:final_project/views/home_view.dart';
 import 'package:final_project/views/nav_bar_view.dart';
-import 'package:final_project/widget/doctors_cart_in_search_view.dart';
+import 'package:final_project/widget/doctors_card_in_search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -107,8 +108,21 @@ class SearchView extends StatelessWidget {
                                     itemCount: state.doctors.length,
                                     itemBuilder: (context, index) {
                                       final doctor = state.doctors[index];
-                                      return DoctorsCartInSearchView(
-                                        doctor: doctor,
+                                      return InkWell(
+                                        onTap: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  DoctorDetailsView(
+                                                    doctor: doctor,
+                                                  ),
+                                            ),
+                                          );
+                                        },
+                                        child: DoctorsCardInSearchView(
+                                          doctor: doctor,
+                                        ),
                                       );
                                     },
                                   );
