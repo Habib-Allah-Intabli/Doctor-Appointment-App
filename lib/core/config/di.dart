@@ -6,7 +6,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 GetIt getIt = GetIt.instance;
 
 Future<void> setup() async {
-  
   getIt.registerSingleton(await SharedPreferences.getInstance());
   getIt.registerSingleton(AuthService());
   getIt.registerSingleton(
