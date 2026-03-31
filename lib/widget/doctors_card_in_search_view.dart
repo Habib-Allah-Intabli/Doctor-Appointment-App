@@ -21,14 +21,8 @@ class DoctorsCardInSearchView extends StatelessWidget {
             spreadRadius: 0,
             color: Colors.black.withValues(alpha: 0.05),
           ),
-          BoxShadow(
-            offset: Offset(0, 10),
-            blurRadius: 15,
-            spreadRadius: -3,
-            color: Colors.black.withValues(alpha: 0.10),
-          ),
         ],
-        color: Color(0xffF3F4F6),
+        color: Colors.white,
         borderRadius: BorderRadius.circular(14),
       ),
       child: Container(
@@ -85,7 +79,6 @@ class DoctorsCardInSearchView extends StatelessWidget {
                       ],
                     ),
                   ),
-                  // SizedBox(height: ),
                   Divider(thickness: 1, color: Color(0xffE5E7EB)),
                   Text(
                     doctor.specialization,

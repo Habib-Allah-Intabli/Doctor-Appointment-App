@@ -131,13 +131,13 @@ class _SignInViewState extends State<SignInView> {
             ),
             CreateAccountBySocialMedia(
               onTap: () {},
-              logo: 'assets/image/google_logo.png',
+              logo: 'assets/images/google_logo.png',
               text: 'Continue With Google',
             ),
             SizedBox(height: 8),
             CreateAccountBySocialMedia(
               onTap: () {},
-              logo: 'assets/image/facebook_logo.png',
+              logo: 'assets/images/facebook_logo.png',
               text: 'Continue With Facebook',
             ),
             SizedBox(height: 23),

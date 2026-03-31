@@ -27,7 +27,7 @@ class CreateAccountBySocialMedia extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // SizedBox(width: 20, height: 20, child: Image.asset(logo)),
+              SizedBox(width: 20, height: 20, child: Image.asset(logo)),
               SizedBox(width: 8),
               Text(
                 text,

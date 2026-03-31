@@ -11,7 +11,6 @@ class TextFieldAuth extends StatelessWidget {
     Key? key,
     required this.hint,
     required this.icon,
-    // required this.keyboardType,
     this.obscureText = false,
     required this.controller,
   }) : super(key: key);

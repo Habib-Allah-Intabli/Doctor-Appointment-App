@@ -1,5 +1,7 @@
+import 'package:final_project/bloc/user_session_bloc/user_session_bloc.dart';
 import 'package:final_project/widget/onboarding.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -62,7 +64,9 @@ class _OnboardingViewState extends State<OnboardingView> {
           ),
           SizedBox(height: 14),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              context.read<UserSessionBloc>().add(CompleteOnboarding());
+            },
             child: Text('Skip', style: TextStyle(fontSize: 14.sp)),
           ),
         ],

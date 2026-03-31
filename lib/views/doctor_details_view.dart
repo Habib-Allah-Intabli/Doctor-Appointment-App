@@ -1,4 +1,6 @@
 import 'package:final_project/models/doctors_model.dart';
+import 'package:final_project/views/book_appointment.dart';
+import 'package:final_project/views/nav_bar_view.dart';
 import 'package:final_project/widget/circle_avatar_in_doctor_details_view.dart';
 import 'package:final_project/widget/doctor_cart_in_doctor_details_view.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +18,14 @@ class DoctorDetailsView extends StatelessWidget {
         backgroundColor: Colors.white,
         centerTitle: true,
         leading: IconButton(
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return NavBarView();
+              },
+            ),
+          ),
           icon: Icon(Icons.arrow_back, color: Color(0xff1A1A2E)),
         ),
         title: Text(
@@ -227,7 +236,16 @@ class DoctorDetailsView extends StatelessWidget {
               shape: StadiumBorder(),
               elevation: 0,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return BookAppointment(doctor: doctor);
+                  },
+                ),
+              );
+            },
             child: Text(
               'Book Appointment',
               style: TextStyle(

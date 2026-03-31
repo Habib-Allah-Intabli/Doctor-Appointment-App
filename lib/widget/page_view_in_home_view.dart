@@ -12,48 +12,45 @@ class PageViewInHomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16),
-          child: Container(
-            width: 350,
-            height: 190,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(18),
-              image: DecorationImage(
-                image: AssetImage('assets/images/home_image_1.png'),
-              ),
+        Container(
+          width: 350,
+          height: 190,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(18),
+            image: DecorationImage(
+              image: AssetImage('assets/images/home_image_1.png'),
             ),
-            padding: EdgeInsets.all(20),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Looking for\nSpecialist Doctors?',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 17,
-                          fontWeight: FontWeight.w800,
-                          height: 1.3,
-                        ),
+          ),
+          padding: EdgeInsets.all(20),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Looking for\nSpecialist Doctors?',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 17,
+                        fontWeight: FontWeight.w800,
+                        height: 1.3,
                       ),
-                      SizedBox(height: 8),
-                      Text(
-                        'Schedule an appointment with\nour top doctors.',
-                        style: TextStyle(
-                          color: Colors.white70,
-                          fontSize: 11,
-                          height: 1.5,
-                        ),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      'Schedule an appointment with\nour top doctors.',
+                      style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: 11,
+                        height: 1.5,
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
         Positioned(

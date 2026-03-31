@@ -1,4 +1,5 @@
 import 'package:final_project/bloc/auth_bloc/auth_bloc.dart';
+import 'package:final_project/views/sign_in_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,15 +12,16 @@ Future<dynamic> showBottomSheetLogout(BuildContext context) {
         listener: (context, state) {
           if (state is AuthSuccess) {
             Navigator.pop(context);
+
+            context.read<AuthBloc>().add(SignOut());
           } else if (state is AuthError) {
-            // حدث خطأ
-            Navigator.pop(context); // إغلاق الـ BottomSheet
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text(state.errorMessage),
-                backgroundColor: Colors.red,
-              ),
-            );
+            // Navigator.pop(context);
+            // ScaffoldMessenger.of(context).showSnackBar(
+            //   SnackBar(
+            //     content: Text(state.errorMessage),
+            //     backgroundColor: Colors.red,
+            //   ),
+            // );
           }
         },
         builder: (context, state) {
@@ -49,7 +51,15 @@ Future<dynamic> showBottomSheetLogout(BuildContext context) {
                             ),
                           ),
                         ),
-                        SizedBox(height: 32),
+                        // SizedBox(height: 32),
+                        Container(
+                          width: 250,
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: Divider(
+                            thickness: 1,
+                            color: Color(0xffE5E7EB),
+                          ),
+                        ),
                         Text(
                           'Are you sure you want to log out?',
                           style: TextStyle(
@@ -83,6 +93,14 @@ Future<dynamic> showBottomSheetLogout(BuildContext context) {
                               ElevatedButton(
                                 onPressed: () {
                                   context.read<AuthBloc>().add(SignOut());
+                                  Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return SignInView();
+                                      },
+                                    ),
+                                  );
                                 },
                                 style: ElevatedButton.styleFrom(
                                   fixedSize: Size(200.w, 41.h),

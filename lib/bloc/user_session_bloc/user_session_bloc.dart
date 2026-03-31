@@ -14,7 +14,7 @@ class UserSessionBloc extends Bloc<UserSessionEvent, UserSessionState> {
   UserSessionService userSessionService;
   UserSessionBloc(this.userSessionService) : super(UserSessionInitial()) {
     on<UserSessionCheckStatus>((event, emit) async {
-      await Future.delayed(Duration(seconds: 3));
+      await Future.delayed(Duration(seconds: 6));
       if (userSessionService.isFirstTimeOpen()) {
         emit(UserFirstTimeState());
       } else {
@@ -36,10 +36,10 @@ class UserSessionBloc extends Bloc<UserSessionEvent, UserSessionState> {
       emit(UserUnAuth());
     });
     on<Signout>((event, emit) async {
-      final token = getIt.get<SharedPreferences>().getString("token");
-      if (token != null) {
-        await getIt.get<AuthService>().signout(token: token); // ← API call
-      }
+      // final token = getIt.get<SharedPreferences>().getString("token");
+      // if (token != null) {
+      //   await getIt.get<AuthService>().signout(token: token); // ← API call
+      // }
       emit(UserUnAuth());
     });
   }
