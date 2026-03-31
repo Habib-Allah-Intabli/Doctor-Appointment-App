@@ -1,9 +1,9 @@
 import 'package:final_project/bloc/local_search_doctor_bloc/local_search_doctor_bloc.dart';
-import 'package:final_project/models/doctors_model.dart';
+import 'package:final_project/views/home_view.dart';
+import 'package:final_project/views/nav_bar_view.dart';
 import 'package:final_project/widget/doctors_cart_in_search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SearchView extends StatelessWidget {
   const SearchView({super.key});
@@ -15,18 +15,50 @@ class SearchView extends StatelessWidget {
       child: Builder(
         builder: (context) {
           return Scaffold(
-            appBar: AppBar(
-              title: Padding(
-                padding: const EdgeInsets.only(left: 30),
-                child: Center(child: Text('All Doctors')),
-              ),
-            ),
             body: Container(
               color: Colors.white,
               padding: EdgeInsets.symmetric(horizontal: 24),
               child: Column(
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    child: Row(
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return NavBarView();
+                                },
+                              ),
+                            );
+                          },
+                          child: Icon(
+                            Icons.arrow_back,
+                            color: Color(0xff374151),
+                            size: 20,
+                          ),
+                        ),
+                        SizedBox(width: 70),
+                        Text(
+                          'All Doctors',
+                          style: TextStyle(
+                            color: Color(0xff374151),
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   TextField(
+                    onChanged: (value) {
+                      context.read<LocalSearchDoctorBloc>().add(
+                        SearchDoctor(query: value),
+                      );
+                    },
                     decoration: InputDecoration(
                       hintText: 'Search doctor...',
                       hintStyle: TextStyle(
@@ -55,30 +87,41 @@ class SearchView extends StatelessWidget {
                       contentPadding: EdgeInsets.symmetric(vertical: 13),
                     ),
                   ),
+                  SizedBox(height: 5),
                   Expanded(
-                    child: BlocBuilder<LocalSearchDoctorBloc, LocalSearchDoctorState>(
-                      builder: (context, state) {
-                        switch (state.status) {
-                          case LocalSearchStatus.initial:
-                          case LocalSearchStatus.success:
-                            if (state.doctors.isEmpty) {
-                              return Center(child: Text('No doctors found'));
-                            } else {
-                              return ListView.builder(
-                                itemCount: state.doctors.length,
-                                itemBuilder: (context, index) {
-                                  final doctor = state.doctors[index];
-                                  return DoctorsCartInSearchView(doctor: doctor);
-                                },
-                              );
+                    child:
+                        BlocBuilder<
+                          LocalSearchDoctorBloc,
+                          LocalSearchDoctorState
+                        >(
+                          builder: (context, state) {
+                            switch (state.status) {
+                              case LocalSearchStatus.initial:
+                              case LocalSearchStatus.success:
+                                if (state.doctors.isEmpty) {
+                                  return Center(
+                                    child: Text('No doctors found'),
+                                  );
+                                } else {
+                                  return ListView.builder(
+                                    itemCount: state.doctors.length,
+                                    itemBuilder: (context, index) {
+                                      final doctor = state.doctors[index];
+                                      return DoctorsCartInSearchView(
+                                        doctor: doctor,
+                                      );
+                                    },
+                                  );
+                                }
+                              case LocalSearchStatus.failure:
+                                return Center(child: Text(state.errorMessage!));
+                              case LocalSearchStatus.loading:
+                                return Center(
+                                  child: CircularProgressIndicator(),
+                                );
                             }
-                          case LocalSearchStatus.failure:
-                            return Center(child: Text(state.errorMessage!));
-                          case LocalSearchStatus.loading:
-                            return Center(child: CircularProgressIndicator());
-                        }
-                      },
-                    ),
+                          },
+                        ),
                   ),
                 ],
               ),

@@ -73,7 +73,7 @@ class _HomeViewState extends State<HomeView> {
           ),
           SizedBox(
             width: 450.w,
-            height: 200.h,
+            height: 240.h,
             child: PageView(
               controller: controller,
               children: [

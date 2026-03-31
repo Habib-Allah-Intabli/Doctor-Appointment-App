@@ -7,4 +7,10 @@ sealed class LocalSearchDoctorEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class GetAllDoctors extends LocalSearchDoctorEvent{}
+class GetAllDoctors extends LocalSearchDoctorEvent {}
+
+final class SearchDoctor extends LocalSearchDoctorEvent {
+  final String query;
+
+  SearchDoctor({required this.query});
+}

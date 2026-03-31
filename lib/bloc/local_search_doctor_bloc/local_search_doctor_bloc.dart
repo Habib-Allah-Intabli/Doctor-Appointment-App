@@ -9,7 +9,7 @@ part 'local_search_doctor_state.dart';
 
 class LocalSearchDoctorBloc
     extends Bloc<LocalSearchDoctorEvent, LocalSearchDoctorState> {
-  List<DoctorsModel> allProducts = [];
+  List<DoctorsModel> allDoctors = [];
   LocalSearchDoctorBloc()
     : super(
         LocalSearchDoctorState(doctors: [], status: LocalSearchStatus.initial),
@@ -18,11 +18,11 @@ class LocalSearchDoctorBloc
       emit(state.copyWith(status: LocalSearchStatus.loading));
       List<DoctorsModel>? result = await getIt.get<DoctorsService>().getAll();
       if (result != null) {
-        allProducts = result;
+        allDoctors = result;
         emit(
           state.copyWith(
             status: LocalSearchStatus.success,
-            doctors: allProducts,
+            doctors: allDoctors,
           ),
         );
       } else {
@@ -30,6 +30,31 @@ class LocalSearchDoctorBloc
           state.copyWith(
             status: LocalSearchStatus.failure,
             errorMessage: 'Failed to load doctors',
+          ),
+        );
+      }
+    });
+    on<SearchDoctor>((event, emit) {
+      if (event.query.isNotEmpty) {
+        final filtered = allDoctors
+            .where(
+              (doctor) =>
+                  doctor.name.toLowerCase().contains(
+                    event.query.toLowerCase(),
+                  ) ||
+                  doctor.specialization.toLowerCase().contains(
+                    event.query.toLowerCase(),
+                  ),
+            )
+            .toList();
+        emit(
+          state.copyWith(status: LocalSearchStatus.success, doctors: filtered),
+        );
+      } else {
+        emit(
+          state.copyWith(
+            status: LocalSearchStatus.success,
+            doctors: allDoctors, // ← رجّع الكل
           ),
         );
       }

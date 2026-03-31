@@ -1,3 +1,4 @@
+import 'package:final_project/views/nav_bar_view.dart';
 import 'package:final_project/widget/build_menu_in_account_view.dart';
 import 'package:final_project/widget/show_bottom_sheet_logout.dart';
 import 'package:flutter/material.dart';
@@ -22,24 +23,35 @@ class _AccountViewState extends State<AccountView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        centerTitle: true,
-        title: Text(
-          'Profile',
-          style: TextStyle(
-            fontSize: 17,
-            fontWeight: FontWeight.w700,
-            color: Color(0xff1A1A2E),
-          ),
-        ),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.white,
+      //   elevation: 0,
+      //   centerTitle: true,
+      //   title: Text(
+      //     'Profile',
+      //     style: TextStyle(
+      //       fontSize: 17,
+      //       fontWeight: FontWeight.w700,
+      //       color: Color(0xff1A1A2E),
+      //     ),
+      //   ),
+      // ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12),
           child: Column(
             children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                child: Text(
+                  'Profile',
+                  style: TextStyle(
+                    color: Color(0xff374151),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
               Stack(
                 children: [
                   CircleAvatar(
