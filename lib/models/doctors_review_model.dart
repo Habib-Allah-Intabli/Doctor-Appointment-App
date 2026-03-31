@@ -3,9 +3,9 @@ import 'dart:convert';
 
 class DoctorsReviewModel {
   int id;
-    String username;
-    int rating;
-    String reviewBody;
+  String username;
+  int rating;
+  String reviewBody;
   DoctorsReviewModel({
     required this.id,
     required this.username,
@@ -38,16 +38,17 @@ class DoctorsReviewModel {
 
   factory DoctorsReviewModel.fromMap(Map<String, dynamic> map) {
     return DoctorsReviewModel(
-      id: map['id'] as int,
-      username: map['username'] as String,
-      rating: map['rating'] as int,
-      reviewBody: map['reviewBody'] as String,
+      id: map['id'] ?? 0,
+      username: map['username'] ?? '', // ← ممكن null
+      rating: map['rating'] ?? 0,
+      reviewBody: map['review_body'] ?? '', // ← ممكن null
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory DoctorsReviewModel.fromJson(String source) => DoctorsReviewModel.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory DoctorsReviewModel.fromJson(String source) =>
+      DoctorsReviewModel.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {
@@ -57,19 +58,18 @@ class DoctorsReviewModel {
   @override
   bool operator ==(covariant DoctorsReviewModel other) {
     if (identical(this, other)) return true;
-  
-    return 
-      other.id == id &&
-      other.username == username &&
-      other.rating == rating &&
-      other.reviewBody == reviewBody;
+
+    return other.id == id &&
+        other.username == username &&
+        other.rating == rating &&
+        other.reviewBody == reviewBody;
   }
 
   @override
   int get hashCode {
     return id.hashCode ^
-      username.hashCode ^
-      rating.hashCode ^
-      reviewBody.hashCode;
+        username.hashCode ^
+        rating.hashCode ^
+        reviewBody.hashCode;
   }
 }

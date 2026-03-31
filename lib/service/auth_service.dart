@@ -1,12 +1,12 @@
 import 'package:dio/dio.dart';
-import 'package:final_project/core/config/app_config.dart';
+import 'package:final_project/core/config/api_constants.dart';
 import 'package:final_project/core/config/di.dart';
 import 'package:final_project/models/auth_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthService {
   Dio dio = Dio();
-  final String baseUrl = AppConfig.baseUrl;
+  final String baseUrl = ApiConstants.baseUrl;
   late Response response;
   Future<bool> login({required AuthModel authModel}) async {
     try {
