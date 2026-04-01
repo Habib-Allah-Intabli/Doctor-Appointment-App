@@ -2,7 +2,7 @@ import 'package:final_project/models/doctors_model.dart';
 import 'package:final_project/views/book_appointment.dart';
 import 'package:final_project/views/nav_bar_view.dart';
 import 'package:final_project/widget/circle_avatar_in_doctor_details_view.dart';
-import 'package:final_project/widget/doctor_cart_in_doctor_details_view.dart';
+import 'package:final_project/widget/doctor_card_in_doctor_details_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -47,7 +47,7 @@ class DoctorDetailsView extends StatelessWidget {
         padding: EdgeInsets.all(16),
         child: Column(
           children: [
-            DoctorCartInDoctorDetailsView(doctor: doctor),
+            DoctorCardInDoctorDetailsView(doctor: doctor),
             SizedBox(height: 12),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

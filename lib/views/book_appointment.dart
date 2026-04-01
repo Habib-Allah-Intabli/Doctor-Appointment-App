@@ -1,8 +1,13 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:final_project/bloc/cart_bloc/cart_bloc.dart';
+import 'package:final_project/models/cart_doctor_model.dart';
+import 'package:final_project/views/home_view.dart';
+import 'package:final_project/views/nav_bar_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:final_project/models/doctors_model.dart';
 import 'package:final_project/views/doctor_details_view.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -36,7 +41,6 @@ class _BookAppointmentState extends State<BookAppointment> {
   String? selectedTime;
   @override
   Widget build(BuildContext context) {
-    TextEditingController datePickIt = TextEditingController();
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(10),
@@ -171,6 +175,7 @@ class _BookAppointmentState extends State<BookAppointment> {
                   backgroundColor: Color(0xff1C2A3A),
                 ),
                 onPressed: () {
+                  final cartBloc = context.read<CartBloc>();
                   showDialog(
                     context: context,
                     builder: (context) {
@@ -210,8 +215,22 @@ class _BookAppointmentState extends State<BookAppointment> {
                                   backgroundColor: Color(0xff1C2A3A),
                                 ),
                                 onPressed: () {
+                                  cartBloc.add(
+                                    AddToCart(
+                                      cartDoctorModel: CartDoctorModel(
+                                        doctor: widget.doctor,
+                                      ),
+                                    ),
+                                  );
                                   print("the action done successfully");
-                                  Navigator.pop(context);
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return NavBarView();
+                                      },
+                                    ),
+                                  );
                                 },
                                 child: Text(
                                   "Done",

@@ -4,19 +4,43 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 
 import 'package:final_project/models/doctors_review_model.dart';
-
-class DoctorsModel {
+import 'package:hive_flutter/hive_flutter.dart';
+part 'doctors_model.g.dart';
+@HiveType(typeId: 0)
+class DoctorsModel extends HiveObject {
+  @HiveField(0)
   int id;
+
+  @HiveField(1)
   String name;
+
+  @HiveField(2)
   String specialization;
+
+  @HiveField(3)
   String image;
+
+  @HiveField(4)
   String location;
+
+  @HiveField(5)
   int patientsCount;
+
+  @HiveField(6)
   int experienceRate;
+
+  @HiveField(7)
   int rating;
+
+  @HiveField(8)
   String about;
+
+  @HiveField(9)
   String workingtime;
+
+  @HiveField(10)
   List<DoctorsReviewModel> reviews;
+
   DoctorsModel({
     required this.id,
     required this.name,
@@ -59,7 +83,7 @@ class DoctorsModel {
     );
   }
 
-  Map<String, dynamic> toMap() {
+  Map<dynamic, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
       'name': name,
@@ -75,7 +99,7 @@ class DoctorsModel {
     };
   }
 
-  factory DoctorsModel.fromMap(Map<String, dynamic> map) {
+  factory DoctorsModel.fromMap(Map<dynamic, dynamic> map) {
     return DoctorsModel(
       id: map['id'] ?? 0, // ← أضف ?? لكل int
       name: map['name'] ?? '',
@@ -88,17 +112,20 @@ class DoctorsModel {
       about: map['about'] ?? '',
       workingtime: map['working_time'] ?? '',
       reviews: map['reviews'] != null
-          ? List<DoctorsReviewModel>.from(
-              map['reviews'].map((r) => DoctorsReviewModel.fromMap(r)),
-            )
-          : [], // ← لو reviews null رجّع list فاضية
+          ? List.from(map['reviews'])
+                .map(
+                  (r) =>
+                      DoctorsReviewModel.fromMap(Map<String, dynamic>.from(r)),
+                )
+                .toList()
+          : [],
     );
   }
 
   String toJson() => json.encode(toMap());
 
   factory DoctorsModel.fromJson(String source) =>
-      DoctorsModel.fromMap(json.decode(source) as Map<String, dynamic>);
+      DoctorsModel.fromMap(json.decode(source) as Map<dynamic, dynamic>);
 
   @override
   String toString() {

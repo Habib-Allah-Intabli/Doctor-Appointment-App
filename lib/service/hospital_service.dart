@@ -16,14 +16,13 @@ class HospitalService {
         '$baseUrl/hospitals',
         options: Options(headers: {"Authorization": "Bearer $token"}),
       );
-      print('✅ Status: ${response.statusCode}');
 
       if (response.statusCode == 200) {
         List<HospitalModel> hospitals = List.generate(
           response.data.length,
           (index) => HospitalModel.fromMap(response.data[index]),
         );
-        print(response.data);
+        // print(response.data);
         return hospitals;
       } else {
         return null;

@@ -1,4 +1,4 @@
-import 'package:final_project/bloc/bloc/hospital_bloc.dart';
+import 'package:final_project/bloc/hospital_bloc/hospital_bloc.dart';
 import 'package:final_project/widget/hospital_card_in_home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

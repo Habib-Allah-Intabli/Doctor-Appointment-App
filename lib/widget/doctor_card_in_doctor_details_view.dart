@@ -2,8 +2,8 @@ import 'package:final_project/models/doctors_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class DoctorCartInDoctorDetailsView extends StatelessWidget {
-  const DoctorCartInDoctorDetailsView({super.key, required this.doctor});
+class DoctorCardInDoctorDetailsView extends StatelessWidget {
+  const DoctorCardInDoctorDetailsView({super.key, required this.doctor});
 
   final DoctorsModel doctor;
 
@@ -55,18 +55,12 @@ class DoctorCartInDoctorDetailsView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(height: 13),
-                  SizedBox(
-                    width: 140.w,
-                    height: 24.h,
-                    child: Expanded(
-                      child: Text(
-                        doctor.name,
-                        style: TextStyle(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w700,
-                          color: Color(0xff1F2A37),
-                        ),
-                      ),
+                  Text(
+                    doctor.name,
+                    style: TextStyle(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xff1F2A37),
                     ),
                   ),
                   Divider(thickness: 1, color: Color(0xffE5E7EB)),

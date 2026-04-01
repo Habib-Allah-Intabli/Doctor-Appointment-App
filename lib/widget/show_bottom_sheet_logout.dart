@@ -8,21 +8,17 @@ Future<dynamic> showBottomSheetLogout(BuildContext context) {
   return showModalBottomSheet(
     context: context,
     builder: (context) {
+      final authBloc = context.read<AuthBloc>();
       return BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
           if (state is AuthSuccess) {
             Navigator.pop(context);
-
-            context.read<AuthBloc>().add(SignOut());
-          } else if (state is AuthError) {
-            // Navigator.pop(context);
-            // ScaffoldMessenger.of(context).showSnackBar(
-            //   SnackBar(
-            //     content: Text(state.errorMessage),
-            //     backgroundColor: Colors.red,
-            //   ),
-            // );
-          }
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (_) => SignInView()),
+              (route) => false,
+            );
+          } else if (state is AuthError) {}
         },
         builder: (context, state) {
           return Container(
@@ -92,15 +88,7 @@ Future<dynamic> showBottomSheetLogout(BuildContext context) {
                               ),
                               ElevatedButton(
                                 onPressed: () {
-                                  context.read<AuthBloc>().add(SignOut());
-                                  Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) {
-                                        return SignInView();
-                                      },
-                                    ),
-                                  );
+                                  authBloc.add(SignOut());
                                 },
                                 style: ElevatedButton.styleFrom(
                                   fixedSize: Size(200.w, 41.h),

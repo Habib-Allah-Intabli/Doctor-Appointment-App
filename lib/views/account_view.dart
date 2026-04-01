@@ -1,3 +1,4 @@
+import 'package:final_project/views/favorite_view.dart';
 import 'package:final_project/views/nav_bar_view.dart';
 import 'package:final_project/widget/build_menu_in_account_view.dart';
 import 'package:final_project/widget/show_bottom_sheet_logout.dart';
@@ -23,19 +24,6 @@ class _AccountViewState extends State<AccountView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Colors.white,
-      //   elevation: 0,
-      //   centerTitle: true,
-      //   title: Text(
-      //     'Profile',
-      //     style: TextStyle(
-      //       fontSize: 17,
-      //       fontWeight: FontWeight.w700,
-      //       color: Color(0xff1A1A2E),
-      //     ),
-      //   ),
-      // ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -101,7 +89,16 @@ class _AccountViewState extends State<AccountView> {
               BuildMenuInAccountView(
                 icon: menuItems[1]['icon'],
                 label: menuItems[1]['label'],
-                ontap: () {},
+                ontap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return FavoriteView();
+                      },
+                    ),
+                  );
+                },
               ),
               BuildMenuInAccountView(
                 icon: menuItems[2]['icon'],

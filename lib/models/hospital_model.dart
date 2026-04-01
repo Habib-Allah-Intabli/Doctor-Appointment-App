@@ -65,7 +65,8 @@ class HospitalModel {
 
   String toJson() => json.encode(toMap());
 
-  factory HospitalModel.fromJson(String source) => HospitalModel.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory HospitalModel.fromJson(String source) =>
+      HospitalModel.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {
@@ -75,25 +76,24 @@ class HospitalModel {
   @override
   bool operator ==(covariant HospitalModel other) {
     if (identical(this, other)) return true;
-  
-    return 
-      other.id == id &&
-      other.name == name &&
-      other.image == image &&
-      other.location == location &&
-      other.rating == rating &&
-      other.reviews_count == reviews_count &&
-      other.distance == distance;
+
+    return other.id == id &&
+        other.name == name &&
+        other.image == image &&
+        other.location == location &&
+        other.rating == rating &&
+        other.reviews_count == reviews_count &&
+        other.distance == distance;
   }
 
   @override
   int get hashCode {
     return id.hashCode ^
-      name.hashCode ^
-      image.hashCode ^
-      location.hashCode ^
-      rating.hashCode ^
-      reviews_count.hashCode ^
-      distance.hashCode;
+        name.hashCode ^
+        image.hashCode ^
+        location.hashCode ^
+        rating.hashCode ^
+        reviews_count.hashCode ^
+        distance.hashCode;
   }
 }

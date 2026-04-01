@@ -15,33 +15,31 @@ class CircleAvatarInDoctorDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          CircleAvatar(
-            backgroundColor: Color(0xffF3F4F6),
-            radius: 25,
-            child: Icon(icon, color: const Color(0xff1C2A3A), size: 30),
+    return Column(
+      children: [
+        CircleAvatar(
+          backgroundColor: Color(0xffF3F4F6),
+          radius: 25,
+          child: Icon(icon, color: const Color(0xff1C2A3A), size: 30),
+        ),
+        SizedBox(height: 6),
+        Text(
+          value,
+          style: TextStyle(
+            fontSize: 15.sp,
+            fontWeight: FontWeight.w600,
+            color: Color(0xff4B5563),
           ),
-          SizedBox(height: 6),
-          Text(
-            value,
-            style: TextStyle(
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w600,
-              color: Color(0xff4B5563),
-            ),
+        ),
+        Text(
+          label,
+          style: TextStyle(
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w400,
+            color: Color(0xff6B7280),
           ),
-          Text(
-            label,
-            style: TextStyle(
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w400,
-              color: Color(0xff6B7280),
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

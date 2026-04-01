@@ -28,7 +28,7 @@ class _SignUpViewState extends State<SignUpView> {
             Text(
               'Create Account',
               style: TextStyle(
-                fontSize: 20.sp,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: Color(0xff1C2A3A),
               ),
@@ -36,7 +36,7 @@ class _SignUpViewState extends State<SignUpView> {
             SizedBox(height: 8.h),
             Text(
               'We are here to help you!',
-              style: TextStyle(fontSize: 13.sp, color: Color(0xff6B7280)),
+              style: TextStyle(fontSize: 13, color: Color(0xff6B7280)),
             ),
             SizedBox(height: 32.h),
             SizedBox(
@@ -99,13 +99,13 @@ class _SignUpViewState extends State<SignUpView> {
             ),
             CreateAccountBySocialMedia(
               onTap: () {},
-              logo: 'assets/image/google_logo.png',
+              logo: 'assets/images/google_logo.png',
               text: 'Continue With Google',
             ),
             SizedBox(height: 8.h),
             CreateAccountBySocialMedia(
               onTap: () {},
-              logo: 'assets/image/facebook_logo.png',
+              logo: 'assets/images/facebook_logo.png',
               text: 'Continue With Facebook',
             ),
             SizedBox(height: 24.h),
@@ -131,7 +131,7 @@ class _SignUpViewState extends State<SignUpView> {
                     'Sign In',
                     style: TextStyle(
                       color: Color(0xff1C64F2),
-                      fontSize: 13.sp,
+                      fontSize: 13,
                       fontWeight: FontWeight.w600,
                     ),
                   ),

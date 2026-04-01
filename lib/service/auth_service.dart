@@ -34,7 +34,7 @@ class AuthService {
         options: Options(headers: {'Authorization': 'Bearer $token'}),
       );
       if (response.statusCode == 200) {
-        print(response.data);
+        // print(response.data);
         return true;
       } else {
         return false;

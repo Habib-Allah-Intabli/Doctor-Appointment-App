@@ -1,3 +1,4 @@
+import 'package:final_project/views/sign_in_view.dart';
 import 'package:final_project/widget/text_field_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,7 +11,6 @@ class CreateNewPassword extends StatefulWidget {
 }
 
 class _CreateNewPasswordState extends State<CreateNewPassword> {
-  
   TextEditingController password = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -43,12 +43,14 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  TextFieldAuth(controller: password,
+                  TextFieldAuth(
+                    controller: password,
                     hint: 'Password',
                     icon: Icons.lock_outline,
                     obscureText: true,
                   ),
-                  TextFieldAuth(controller: password,
+                  TextFieldAuth(
+                    controller: password,
                     hint: 'Confirm Password',
                     icon: Icons.lock_outline,
                     obscureText: true,
@@ -64,7 +66,16 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xff1C2A3A),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return SignInView();
+                      },
+                    ),
+                  );
+                },
                 child: Text(
                   'Reset Password',
                   style: TextStyle(

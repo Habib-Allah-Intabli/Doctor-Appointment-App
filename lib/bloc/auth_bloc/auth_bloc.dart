@@ -31,7 +31,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       try {
         final prefs = getIt.get<SharedPreferences>();
         final token = prefs.getString('token');
-        print("🔑 Token from SharedPreferences: $token");
         if (token != null) {
           final success = await authService.signout(token: token);
 

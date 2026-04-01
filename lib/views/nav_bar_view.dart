@@ -1,6 +1,6 @@
 import 'package:final_project/models/doctors_model.dart';
 import 'package:final_project/views/account_view.dart';
-import 'package:final_project/views/calendar_view.dart';
+import 'package:final_project/views/cart_view.dart';
 import 'package:final_project/views/home_view.dart';
 import 'package:final_project/views/map_view.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +13,7 @@ class NavBarView extends StatefulWidget {
 }
 
 class _NavBarViewState extends State<NavBarView> {
-  List pages = [HomeView(), MapView(), CalendarView(), AccountView()];
+  List pages = [HomeView(), MapView(), CartView(), AccountView()];
   int currentPageIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -40,9 +40,9 @@ class _NavBarViewState extends State<NavBarView> {
             label: 'Map',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_month_outlined),
-            activeIcon: Icon(Icons.calendar_month),
-            label: 'calendar',
+            icon: Icon(Icons.shopping_bag_outlined),
+            activeIcon: Icon(Icons.shopping_bag),
+            label: 'Booking',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_outline),

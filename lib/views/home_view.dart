@@ -1,15 +1,14 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:final_project/bloc/bloc/hospital_bloc.dart';
+import 'package:final_project/bloc/hospital_bloc/hospital_bloc.dart';
 import 'package:final_project/views/doctor_details_view.dart';
+import 'package:final_project/widget/doctors_card_in_home_view.dart';
 import 'package:final_project/widget/hospital_card_in_home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:final_project/bloc/local_search_doctor_bloc/local_search_doctor_bloc.dart';
-import 'package:final_project/models/doctors_model.dart';
 import 'package:final_project/views/search_view.dart';
-import 'package:final_project/widget/doctors_card_in_search_view.dart';
 import 'package:final_project/widget/page_view_in_home_view.dart';
 
 class HomeView extends StatelessWidget {
@@ -149,9 +148,7 @@ class HomeView extends StatelessWidget {
                                       ),
                                     );
                                   },
-                                  child: DoctorsCardInSearchView(
-                                    doctor: doctor,
-                                  ),
+                                  child: DoctorsCardInHomeView(doctor: doctor),
                                 );
                               },
                             ),

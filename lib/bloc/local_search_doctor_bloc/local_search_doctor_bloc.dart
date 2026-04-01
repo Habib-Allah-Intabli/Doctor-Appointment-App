@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:final_project/core/config/di.dart';
+import 'package:final_project/models/doctor_model.dart';
 import 'package:final_project/models/doctors_model.dart';
 import 'package:final_project/service/doctors_service.dart';
 

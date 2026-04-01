@@ -20,14 +20,13 @@ class DoctorsService {
           },
         ),
       );
-      print('✅ Status: ${response.statusCode}');
 
       if (response.statusCode == 200) {
         List<DoctorsModel> doctors = List.generate(
           response.data.length,
           (index) => DoctorsModel.fromMap(response.data[index]),
         );
-        print(response.data);
+        // print(response.data);
         return doctors;
       } else {
         return null;
