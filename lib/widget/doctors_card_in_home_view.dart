@@ -1,5 +1,4 @@
 import 'package:final_project/bloc/favorite_bloc/favorite_bloc.dart';
-import 'package:final_project/models/doctor_model.dart';
 import 'package:final_project/models/doctors_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -63,14 +62,12 @@ class DoctorsCardInHomeView extends StatelessWidget {
                       SizedBox(
                         width: 197.w,
                         height: 24.h,
-                        child: Expanded(
-                          child: Text(
-                            doctor.name,
-                            style: TextStyle(
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w700,
-                              color: Color(0xff1F2A37),
-                            ),
+                        child: Text(
+                          doctor.name,
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w700,
+                            color: Color(0xff1F2A37),
                           ),
                         ),
                       ),

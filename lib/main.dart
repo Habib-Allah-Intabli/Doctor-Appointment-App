@@ -3,12 +3,9 @@ import 'package:final_project/bloc/cart_bloc/cart_bloc.dart';
 import 'package:final_project/bloc/favorite_bloc/favorite_bloc.dart';
 import 'package:final_project/bloc/user_session_bloc/user_session_bloc.dart';
 import 'package:final_project/core/config/di.dart';
-import 'package:final_project/models/doctor_model.dart';
-import 'package:final_project/models/doctor_review_model.dart';
 import 'package:final_project/models/doctors_model.dart';
 import 'package:final_project/models/doctors_review_model.dart';
 import 'package:final_project/service/auth_service.dart';
-import 'package:final_project/service/user_session_service.dart';
 import 'package:final_project/views/nav_bar_view.dart';
 import 'package:final_project/views/onboarding_view.dart';
 import 'package:final_project/views/sign_in_view.dart';
@@ -17,7 +14,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +23,7 @@ Future<void> main() async {
   await Hive.deleteBoxFromDisk('favorite_key');
 
   await setup();
-  getIt.get<SharedPreferences>().clear();
+  // getIt.get<SharedPreferences>().clear();
   runApp(const MyApp());
 }
 

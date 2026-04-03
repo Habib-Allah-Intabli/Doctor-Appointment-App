@@ -1,18 +1,17 @@
 import 'package:dio/dio.dart';
 import 'package:final_project/core/config/api_constants.dart';
 import 'package:final_project/core/config/di.dart';
-import 'package:final_project/models/doctors_model.dart';
 import 'package:final_project/models/hospital_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HospitalService {
   Future<List<HospitalModel>?> getAll() async {
     String baseUrl = ApiConstants.baseUrl;
-    final Dio _dio = Dio();
+    final Dio dio = Dio();
     try {
       final token = getIt.get<SharedPreferences>().getString('token');
       print(token);
-      Response response = await _dio.get(
+      Response response = await dio.get(
         '$baseUrl/hospitals',
         options: Options(headers: {"Authorization": "Bearer $token"}),
       );

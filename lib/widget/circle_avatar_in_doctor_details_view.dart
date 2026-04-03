@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CircleAvatarInDoctorDetailsView extends StatelessWidget {
-  IconData icon;
-  String value;
-  String label;
-  CircleAvatarInDoctorDetailsView({
-    Key? key,
+  final IconData icon;
+  final String value;
+  final String label;
+  const CircleAvatarInDoctorDetailsView({
+    super.key,
     required this.icon,
     required this.value,
     required this.label,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

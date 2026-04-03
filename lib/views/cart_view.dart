@@ -46,7 +46,7 @@ class CartView extends StatelessWidget {
               return Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [ 
+                  children: [
                     Icon(
                       Icons.calendar_today_outlined,
                       size: 80,
@@ -102,7 +102,7 @@ class CartView extends StatelessWidget {
           BoxShadow(
             offset: Offset(0, 2),
             blurRadius: 8,
-            color: Colors.black.withOpacity(0.06),
+            color: Colors.black.withValues(alpha: 0.06),
           ),
         ],
       ),

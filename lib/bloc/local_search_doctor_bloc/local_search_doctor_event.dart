@@ -12,5 +12,5 @@ class GetAllDoctors extends LocalSearchDoctorEvent {}
 final class SearchDoctor extends LocalSearchDoctorEvent {
   final String query;
 
-  SearchDoctor({required this.query});
+  const SearchDoctor({required this.query});
 }

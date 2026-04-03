@@ -1,10 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:bloc/bloc.dart';
 import 'package:final_project/core/config/di.dart';
-import 'package:final_project/service/auth_service.dart';
-import 'package:meta/meta.dart';
 
 import 'package:final_project/service/user_session_service.dart';
+import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 part 'user_session_event.dart';

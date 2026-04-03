@@ -5,8 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class PageViewInHomeView extends StatelessWidget {
-  PageController controller;
-  PageViewInHomeView({Key? key, required this.controller}) : super(key: key);
+  final PageController controller;
+  const PageViewInHomeView({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {

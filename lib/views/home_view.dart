@@ -12,7 +12,7 @@ import 'package:final_project/views/search_view.dart';
 import 'package:final_project/widget/page_view_in_home_view.dart';
 
 class HomeView extends StatelessWidget {
-  HomeView({Key? key}) : super(key: key);
+  HomeView({super.key});
   final PageController controller = PageController();
 
   @override
@@ -32,7 +32,6 @@ class HomeView extends StatelessWidget {
             body: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Column(
-                // mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
@@ -102,7 +101,7 @@ class HomeView extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 450.w,
+                    // width: 450.w,
                     height: 189.h,
                     child: PageView(
                       controller: controller,

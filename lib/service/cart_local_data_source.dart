@@ -1,5 +1,4 @@
 import 'package:final_project/models/cart_doctor_model.dart';
-import 'package:final_project/models/doctors_model.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 class CartLocalDataSource {

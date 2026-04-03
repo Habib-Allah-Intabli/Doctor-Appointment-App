@@ -4,10 +4,10 @@ part of 'local_search_doctor_bloc.dart';
 enum LocalSearchStatus { initial, success, failure, loading }
 
 class LocalSearchDoctorState extends Equatable {
-  List<DoctorsModel> doctors;
-  LocalSearchStatus status;
-  String? errorMessage;
-  LocalSearchDoctorState({
+  final List<DoctorsModel> doctors;
+  final LocalSearchStatus status;
+  final String? errorMessage;
+  const LocalSearchDoctorState({
     this.doctors = const [],
     this.status = LocalSearchStatus.initial,
     this.errorMessage,

@@ -1,6 +1,5 @@
 import 'package:final_project/bloc/local_search_doctor_bloc/local_search_doctor_bloc.dart';
 import 'package:final_project/views/doctor_details_view.dart';
-import 'package:final_project/views/home_view.dart';
 import 'package:final_project/views/nav_bar_view.dart';
 import 'package:final_project/widget/doctors_card_in_search_view.dart';
 import 'package:flutter/material.dart';

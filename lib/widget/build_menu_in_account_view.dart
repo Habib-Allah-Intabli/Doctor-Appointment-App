@@ -2,15 +2,15 @@
 import 'package:flutter/material.dart';
 
 class BuildMenuInAccountView extends StatelessWidget {
-  IconData icon;
-  String label;
-  VoidCallback ontap;
-  BuildMenuInAccountView({
-    Key? key,
+  final IconData icon;
+  final String label;
+  final VoidCallback ontap;
+  const BuildMenuInAccountView({
+    super.key,
     required this.icon,
     required this.label,
     required this.ontap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

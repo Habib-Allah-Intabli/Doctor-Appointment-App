@@ -1,5 +1,4 @@
 import 'package:final_project/bloc/favorite_bloc/favorite_bloc.dart';
-import 'package:final_project/models/doctor_model.dart';
 import 'package:final_project/models/doctors_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,7 +13,7 @@ class DoctorsCardInFavoriteView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 345.w,
-      height: 155.h,
+      height: 175.h,
       margin: EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
         boxShadow: [
@@ -59,8 +58,8 @@ class DoctorsCardInFavoriteView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    width: 197.w,
-                    height: 24.h,
+                    width: 200.w,
+                    height: 45.h,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

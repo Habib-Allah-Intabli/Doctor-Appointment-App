@@ -1,5 +1,4 @@
 import 'package:final_project/views/favorite_view.dart';
-import 'package:final_project/views/nav_bar_view.dart';
 import 'package:final_project/widget/build_menu_in_account_view.dart';
 import 'package:final_project/widget/show_bottom_sheet_logout.dart';
 import 'package:flutter/material.dart';

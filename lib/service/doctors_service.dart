@@ -7,11 +7,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 class DoctorsService {
   Future<List<DoctorsModel>?> getAll() async {
     String baseUrl = ApiConstants.baseUrl;
-    final Dio _dio = Dio();
+    final Dio dio = Dio();
     try {
       final token = getIt.get<SharedPreferences>().getString('token');
       print(token);
-      Response response = await _dio.get(
+      Response response = await dio.get(
         '$baseUrl/doctors',
         options: Options(
           headers: {

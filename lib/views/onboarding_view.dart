@@ -1,5 +1,5 @@
 import 'package:final_project/bloc/user_session_bloc/user_session_bloc.dart';
-import 'package:final_project/widget/onboarding.dart';
+import 'package:final_project/widget/Onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,24 +25,24 @@ class _OnboardingViewState extends State<OnboardingView> {
               controller: controller,
               scrollDirection: Axis.horizontal,
               children: [
-                onboarding(
-                  onboarding_image: 'assets/images/onboarding_image_1.png',
-                  onboarding_title: 'Meet Doctors Online',
-                  onboarding_subtitle:
+                Onboarding(
+                  onboardingImage: 'assets/images/onboarding_image_1.png',
+                  onboardingTitle: 'Meet Doctors Online',
+                  onboardingSubtitle:
                       'Connect with Specialized Doctors Online for Convenient and Comprehensive Medical Consultations.',
                   controller: controller,
                 ),
-                onboarding(
-                  onboarding_image: 'assets/images/onboarding_image_2.png',
-                  onboarding_title: 'Connect with Specialists',
-                  onboarding_subtitle:
+                Onboarding(
+                  onboardingImage: 'assets/images/onboarding_image_2.png',
+                  onboardingTitle: 'Connect with Specialists',
+                  onboardingSubtitle:
                       'Connect with Specialized Doctors Online for Convenient and Comprehensive Medical Consultations.',
                   controller: controller,
                 ),
-                onboarding(
-                  onboarding_image: 'assets/images/onboarding_image_3.png',
-                  onboarding_title: 'Thousands of Online Specialists',
-                  onboarding_subtitle:
+                Onboarding(
+                  onboardingImage: 'assets/images/onboarding_image_3.png',
+                  onboardingTitle: 'Thousands of Online Specialists',
+                  onboardingSubtitle:
                       ' Explore a Vast Array of Online Medical Specialists, Offering an Extensive Range of Expertise Tailored to Your Healthcare Needs.',
                   controller: controller,
                   isLast: true,

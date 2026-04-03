@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:final_project/bloc/user_session_bloc/user_session_bloc.dart';
 import 'package:final_project/core/config/di.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meta/meta.dart';
 
 import 'package:final_project/models/auth_model.dart';
 import 'package:final_project/service/auth_service.dart';

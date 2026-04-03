@@ -1,11 +1,8 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:final_project/core/config/di.dart';
 import 'package:final_project/models/cart_doctor_model.dart';
-import 'package:final_project/models/doctors_model.dart';
 import 'package:final_project/service/cart_local_data_source.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'cart_event.dart';
 part 'cart_state.dart';

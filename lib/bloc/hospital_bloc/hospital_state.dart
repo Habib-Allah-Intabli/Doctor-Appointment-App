@@ -3,6 +3,7 @@ part of 'hospital_bloc.dart';
 
 enum HospitalStatus { initial, success, failure, loading }
 
+// ignore: must_be_immutable
 class HospitalState extends Equatable {
   List<HospitalModel> hospitals;
   HospitalStatus status;

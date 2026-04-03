@@ -12,10 +12,8 @@ final class CartLoading extends CartState {}
 
 class CartLoaded extends CartState {
   final List<CartDoctorModel> cartDoctors;
-  // final double totalPrice;
   const CartLoaded({
     required this.cartDoctors,
-    // required this.totalPrice,
   });
 }
 

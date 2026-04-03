@@ -1,4 +1,3 @@
-import 'package:final_project/models/doctors_model.dart';
 import 'package:final_project/views/account_view.dart';
 import 'package:final_project/views/cart_view.dart';
 import 'package:final_project/views/home_view.dart';

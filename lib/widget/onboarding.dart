@@ -1,38 +1,36 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:final_project/bloc/user_session_bloc/user_session_bloc.dart';
-import 'package:final_project/views/sign_in_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class onboarding extends StatelessWidget {
-  const onboarding({
-    Key? key,
-    required this.onboarding_image,
-    required this.onboarding_title,
-    required this.onboarding_subtitle,
+class Onboarding extends StatelessWidget {
+  const Onboarding({
+    super.key,
+    required this.onboardingImage,
+    required this.onboardingTitle,
+    required this.onboardingSubtitle,
     required this.controller,
     this.isLast = false,
-  }) : super(key: key);
+  });
 
-  final String onboarding_image;
-  final String onboarding_title;
-  final String onboarding_subtitle;
+  final String onboardingImage;
+  final String onboardingTitle;
+  final String onboardingSubtitle;
   final PageController controller;
-  final isLast;
+  final dynamic isLast;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset(onboarding_image),
+        Image.asset(onboardingImage),
         Padding(
           padding: const EdgeInsets.only(top: 28, bottom: 8),
           child: SizedBox(
             width: 311,
             height: 25,
             child: Text(
-              onboarding_title,
+              onboardingTitle,
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700),
             ),
@@ -42,7 +40,7 @@ class onboarding extends StatelessWidget {
           width: 311,
           height: 61,
           child: Text(
-            onboarding_subtitle,
+            onboardingSubtitle,
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Color(0xff6B7280),
@@ -58,7 +56,8 @@ class onboarding extends StatelessWidget {
             fixedSize: WidgetStatePropertyAll(Size(311, 40)),
           ),
           onPressed: () {
-            if (isLast) { context.read<UserSessionBloc>().add(CompleteOnboarding());
+            if (isLast) {
+              context.read<UserSessionBloc>().add(CompleteOnboarding());
             } else {
               controller.nextPage(
                 duration: Duration(milliseconds: 400),

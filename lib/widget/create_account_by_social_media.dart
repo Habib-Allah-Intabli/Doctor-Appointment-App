@@ -2,15 +2,15 @@
 import 'package:flutter/material.dart';
 
 class CreateAccountBySocialMedia extends StatelessWidget {
-  VoidCallback onTap;
-  String logo;
-  String text;
-  CreateAccountBySocialMedia({
-    Key? key,
+  final VoidCallback onTap;
+  final String logo;
+  final String text;
+  const CreateAccountBySocialMedia({
+    super.key,
     required this.onTap,
     required this.logo,
     required this.text,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

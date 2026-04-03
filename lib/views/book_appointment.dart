@@ -1,7 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:final_project/bloc/cart_bloc/cart_bloc.dart';
 import 'package:final_project/models/cart_doctor_model.dart';
-import 'package:final_project/views/home_view.dart';
 import 'package:final_project/views/nav_bar_view.dart';
 import 'package:flutter/material.dart';
 
@@ -9,12 +8,11 @@ import 'package:final_project/models/doctors_model.dart';
 import 'package:final_project/views/doctor_details_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class BookAppointment extends StatefulWidget {
   final DoctorsModel doctor;
-  const BookAppointment({Key? key, required this.doctor}) : super(key: key);
+  const BookAppointment({super.key, required this.doctor});
 
   @override
   State<BookAppointment> createState() => _BookAppointmentState();

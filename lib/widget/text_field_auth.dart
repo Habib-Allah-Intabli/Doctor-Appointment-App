@@ -2,18 +2,18 @@
 import 'package:flutter/material.dart';
 
 class TextFieldAuth extends StatelessWidget {
-  String hint;
-  IconData icon;
-  TextInputType keyboardType = TextInputType.text;
-  bool obscureText;
-  TextEditingController controller;
+  final String hint;
+  final IconData icon;
+  final TextInputType keyboardType = TextInputType.text;
+  final bool obscureText;
+  final TextEditingController controller;
   TextFieldAuth({
-    Key? key,
+    super.key,
     required this.hint,
     required this.icon,
     this.obscureText = false,
     required this.controller,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -42,13 +42,5 @@ class TextFieldAuth extends StatelessWidget {
         contentPadding: EdgeInsets.symmetric(vertical: 14),
       ),
     );
-    // return TextField(
-    //   decoration: InputDecoration(
-    //     border: OutlineInputBorder(
-    //       borderRadius: BorderRadius.circular(12),
-    //       // borderSide: BorderSide.,
-    //     ),
-    //   ),
-    // );
   }
 }
